@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag("navbar.css")%>
+<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color:#592673;" >
+  <% if user_signed_in? %>
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar, style:"width: 50px; height: 50px;" %>
+    <% end %>
+  <% end %>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.minfra.gba.gob.ar/web/Niveladas/logo%20(1).png" alt="..." height="90">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page", home_index_path >Inicio</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sala", home_purgatory_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Términos y Condiciones", home_about_path, class:"nav-link"%>
+        </li>
+         <li class="nav-item">
+          <%= link_to "Cerrar sesión", destroy_user_session_path,class:"nav-link", style:"border:none;"%>
+        </li>
+        <li class="nav-item">
+           <%= link_to "Registrarse", new_user_registration_path, class:"sign-up nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

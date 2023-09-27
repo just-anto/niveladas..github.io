@@ -1,0 +1,10 @@
+#footer a {
+  height: 56px;
+  width: 56px;
+  display: inline-block;
+  margin: 10px;
+}
+.bg-dark-1 {
+  background-color: #ffffff;
+  background-image: #ffffff;
+}
